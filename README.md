@@ -8,3 +8,4 @@
 
 2) Configure the Terraform plugin as below
 
+![Image description](https://github.com/leeadh/terraform_jenkins/blob/master/pictures/terraform_configuration.png)
