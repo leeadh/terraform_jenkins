@@ -20,9 +20,7 @@ pipeline {
       //clean
       stage('Cleaning build') {
         steps {
-            {
-                sh 'rm -f terraform.tfstate'
-            }
+            sh 'rm -f terraform.tfstate'
         }
       }
 
