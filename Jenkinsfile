@@ -14,21 +14,7 @@ pipeline {
       }
 
 
-      //destroy
-      stage('terraform destroy') {
-        steps {
-          withCredentials([[
-            $class: 'AmazonWebServicesCredentialsBinding',
-            credentialsId: 'awsCredentials',
-            accessKeyVariable: 'AWS_ACCESS_KEY_ID',
-            secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
-          ]]) {
-            ansiColor('xterm') {
-              sh 'terraform destroy --var-file=terraform.tfstate'
-            }
-          }
-        }
-      }
+
 
 
       //clean
