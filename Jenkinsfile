@@ -21,10 +21,8 @@ pipeline {
       stage('Cleaning build') {
         steps {
             {
-                ansiColor('xterm') {
                 sh 'rm -f terraform.tfstate'
-                }
-          }
+            }
         }
       }
 
