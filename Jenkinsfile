@@ -23,7 +23,7 @@ pipeline {
             secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
           ]]) {
             ansiColor('xterm') {
-              sh 'terraform destory -auto-approve'
+              sh 'terraform destory --force'
             }
           }
         }
