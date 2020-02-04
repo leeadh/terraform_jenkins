@@ -13,7 +13,8 @@ pipeline {
           }
       }
 
-      //apply
+
+      //destroy
       stage('terraform destroy') {
         steps {
           withCredentials([[
@@ -23,8 +24,20 @@ pipeline {
             secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
           ]]) {
             ansiColor('xterm') {
-              sh 'rm -f terraform.tfstate'
+              sh 'terraform destroy --var-file=terraform.tfstate'
             }
+          }
+        }
+      }
+
+
+      //clean
+      stage('Cleaning build') {
+        steps {
+            {
+                ansiColor('xterm') {
+                sh 'rm -f terraform.tfstate'
+                }
           }
         }
       }
